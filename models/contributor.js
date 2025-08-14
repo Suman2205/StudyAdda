@@ -7,6 +7,9 @@ const contributorSchema=new Schema({
     email:{
         type:String,
     },
+    description:{
+        type:String,
+    },
     file:{
         type:String,
     }
