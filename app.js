@@ -61,7 +61,7 @@ app.get("/home",async(req,res)=>{
 
 app.post("/home",upload.single('file'),async(req,res)=>{
     if (req.file && req.file.path) {
-        req.flash('success', 'File uploaded successfully!');
+        req.flash('success', 'Thanks for your contribution 😊!! File uploaded successfully 🎉!!');
     } else {
         req.flash('error', 'File upload failed!');
     }
@@ -95,7 +95,7 @@ app.post("/reviews",async(req,res)=>{
     let newReview=new Review(req.body.review);
     Review.insertOne(newReview); 
     console.log("new review saved");
-    req.flash('success','Review posted successfully');
+    req.flash('success','Review posted successfully 👍');
     res.redirect("/reviews");
 })
 app.get("/notes/subjects/:id",async(req,res)=>{
