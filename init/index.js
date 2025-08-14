@@ -10,6 +10,8 @@ const unitData=require('./unitData');
 const Book = require('../models/books');
 const Practical = require('../models/practicals');
 const Pyq = require('../models/pyqs');
+const Review = require('../models/reviews');
+const Contributor = require('../models/contributor');
 main().then((res)=>{
     console.log("connected to db");
 })
@@ -21,6 +23,14 @@ async function main(){
 }
 
 const initUnit=async()=>{
+    await Unit.deleteMany({});
+    await Subject.deleteMany({});
+    await Note.deleteMany({});
+    await Book.deleteMany({});
+    await Practical.deleteMany({});
+    await Pyq.deleteMany({});
+    await Review.deleteMany({});
+    await Contributor.deleteMany({});
     const existing = await Unit.findOne();   // Check if any unit already exists
     if (!existing) {
         await Unit.insertMany(unitData.unitData);  // Only insert if none exist
