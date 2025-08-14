@@ -1,3 +1,8 @@
+if(process.env.NODE_ENV!="production"){
+    require('dotenv').config()
+}
+const dbUrl=process.env.ATLASDB_URL;
+
 const mongoose=require('mongoose');
 const Unit=require('../models/units');
 const Subject = require('../models/subjects');
@@ -13,7 +18,7 @@ main().then((res)=>{
     console.log(err);
 })
 async function main(){
-    await mongoose.connect("mongodb://127.0.0.1:27017/studyadda");
+    await mongoose.connect(dbUrl);
 }
 
 const initUnit=async()=>{
