@@ -1,0 +1,19 @@
+<% layout("/layouts/boilerplate")-%>
+<body>
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 card-container">
+        <% for(let book of books){%>
+                <div class="card col" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title text-center align-self-center mt-2"><%=book.semester%></h5>
+                        <hr>
+                        <p class="card-text">Subjects:</p>
+                        <%for(let subject of book.subjects){%>
+                            <form action="<%=subject.file%>" target="_blank">
+                                <button class="btn btn-info btn-md mb-3" type="submit"><%=subject.title%></button>
+                            </form>
+                        <%}%>
+                    </div>
+                </div>
+        <%}%>
+        </div>
+</body>

@@ -1,0 +1,17 @@
+<% layout("/layouts/boilerplate")-%>
+<body>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3 card-container">
+        <div class="card col" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center align-self-center mt-2"><%=subject.name%></h5><hr>
+                <p class="card-text ">Units:</p>
+                <%for(let unit of subject.units){%>
+                    <form action="<%=unit.file%>" target="_blank">
+                        <button class="btn btn-info btn-md mb-3" type="submit"><%=unit.title%></button>
+                    </form>
+                <%}%>
+                        
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,66 @@
+<style>
+  .offcanvas-half {
+    max-width: 50% !important;
+  }
+  .btn-search{
+    background-color: #fe424d;
+    color: #fff;
+    border-radius: 25px;
+    padding: 0 1rem 0 1rem;
+  }
+  .inp-search{
+    border-radius: 25px;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+  }
+  .btn-search:hover{
+    background-color: #fe424d;
+    color: #fff;
+  }
+  .btn-search i{
+    display: inline;
+    margin-right: 0.5rem;
+  }
+  .container-fluid{
+    padding: 0 !important;
+  }
+  .navbar {
+    height: 50px !important;
+    padding-bottom: 5px !important;
+    padding-top: 0 !important;
+    position: relative;
+    z-index: 1050; /* keep it above body */
+  }
+  .navbar-toggler{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .navbar-collapse {
+    background-color: white; /* solid background when expanded */
+  }
+
+  @media (max-width: 991px) { /* only for mobile view */
+    .navbar-collapse.show {
+      position: relative;
+    }
+  }
+</style>
+
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <!-- <a class="navbar-brand" href="/"><img src="/image/logo.png" style="width: 45px; height: 45px; margin-left: 10px;"></a> -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse ml-10" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link ml-10" href="/home">Home</a>
+        <a class="nav-link" href="/notes">Notes</a>
+        <a class="nav-link" href="/books">Books</a>
+        <a class="nav-link" href="/practicals">Practicals</a>
+        <a class="nav-link" href="/pyqs">PYQs</a>
+        <a class="nav-link" href="/reviews">Reviews & Comments</a>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,17 @@
+<% layout("/layouts/boilerplate")-%>
+<body>
+    <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 row-cols-1 card-container">
+        <% for(let note of notes){%>
+                <div class="card col" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title text-center align-self-center mt-2"><%=note.semester%></h5>
+                        <hr>
+                        <p class="card-text">Subjects:</p>
+                        <%for(let subject of note.subjects){%>
+                            <a href="/notes/subjects/<%=subject._id%>" class="btn btn-info btn-md mb-3"><%=subject.name%></a><br>
+                        <%}%>
+                    </div>
+                </div>
+        <%}%>
+    </div>
+</body>

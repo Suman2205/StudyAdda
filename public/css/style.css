@@ -1,0 +1,150 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Pushes footer down */
+}
+footer {
+    background-color: #222; /* Dark footer */
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+}
+
+.f-info-socials i {
+    font-size: 20px;
+    margin: 0 8px;
+    color: #fff;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.f-info-socials i:hover {
+    color: #0d6efd; /* Bootstrap primary blue on hover */
+}
+.company{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    flex: 1;
+}
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+.fa-compass{
+    margin-left: 10px !important;
+    color: #fe424d;
+    font-size: 2rem;
+}
+.nav-link{
+    padding: 0 !important;
+    font-size: large !important;
+    margin-left: 30px !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    color: #222222 !important;
+}
+.f-info-links, .f-info-socials,.f-info-brands{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Cards*/
+.card-container{
+    display: flex !important;
+    justify-content:center !important;
+    align-items:  flex-start  !important;
+    justify-items: flex-start !important;
+}
+.card{
+    margin: 1.5rem !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+.listing-card{
+    border: none !important;
+    margin-bottom: 1.5rem;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+.card-body{
+    padding:0 !important;
+}
+.card-body p{
+    font-weight: 400 !important;
+}
+
+.btn {
+    width: 100% !important;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    background: linear-gradient(45deg, #87cefa, #00cfff); /* soft sky to cyan */
+    color: black; /* bright cyan to deep turquoise */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #00cfff, #87cefa); /* hover flip */
+}
+
+
+
+.listing-link{
+    text-decoration: none !important;
+}
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+.add-btn{
+    background-color:#fe424d !important;
+    border: none !important;
+}
+
+.edit-btn{
+    background-color:#fe424d !important;
+    border: none !important;
+}
+
+/*Show Page*/
+.show-img{
+    height: 30vh;
+}
+
+.btns{
+    display: flex;
+}
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+}
+.color{
+    color: linear-gradient(45deg, #56ccf2, #2f80ed) !important;
+}
+
+

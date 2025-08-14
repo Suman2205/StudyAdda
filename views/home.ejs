@@ -1,0 +1,111 @@
+<% layout("/layouts/boilerplate")-%>
+<body>
+<!-- Hero Section -->
+<div class="jumbotron text-center bg-light p-5 rounded mt-3 shadow-sm">
+    <h1 class="display-4 fw-bold">Welcome to StudyAdda</span></h1>
+    <p class="lead mt-3">Hello! I’m <strong>Suman</strong>, a senior student from CSE A batch 2023-2027. This platform is dedicated to providing organized, high-quality study materials for students at every stage of their academic journey.</p>
+    <p class="text-muted" style="font-size: medium;">All first-year resources are available for <strong>all branches</strong>, while materials from the second year onwards are tailored specifically for <strong>CSE students</strong>. Currently, I have uploaded resources up to second-year subjects.</p>
+    <a href="#contribute" class="btn btn-dark btn-lg mt-3 shadow-sm" style="color: black;">
+        <i class="bi bi-upload"></i> Contribute Your Notes
+    </a>
+</div>
+
+<!-- Features Section -->
+<div class="container mt-5">
+    <h3 class="text-center mb-4">Why StudyAdda Stands Out</h3>
+    <div class="row text-center g-4">
+        <div class="col-md-4">
+            <div class="card h-100 p-3 shadow-sm hover-shadow border-0">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Organized & Accessible</h5>
+                    <p class="card-text text-muted">Every resource — notes, books, practicals, and previous year questions — is meticulously organized by subject and unit. Access what you need instantly without confusion.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 p-3 shadow-sm hover-shadow border-0">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">PDF Standardization</h5>
+                    <p class="card-text text-muted">All uploads are in PDF format for consistency and reliability. This ensures a seamless experience for students accessing the materials on any device.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 p-3 shadow-sm hover-shadow border-0">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Community-Driven Learning</h5>
+                    <p class="card-text text-muted">Students are encouraged to contribute and review resources. Together, we create a collaborative and supportive learning environment for everyone.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Access Section -->
+<div class="container mt-5">
+    <h3 class="text-center mb-4">Quick Access to Resources</h3>
+    <div class="row text-center g-3">
+        <div class="col-md-2 offset-md-1">
+            <a href="/notes" class="btn btn-outline-dark w-100 p-3 shadow-sm"><i class="bi bi-journal-text"></i> Notes</a>
+        </div>
+        <div class="col-md-2">
+            <a href="/books" class="btn btn-outline-dark w-100 p-3 shadow-sm"><i class="bi bi-book"></i> Books</a>
+        </div>
+        <div class="col-md-2">
+            <a href="/practicals" class="btn btn-outline-dark w-100 p-3 shadow-sm"><i class="bi bi-tools"></i> Practicals</a>
+        </div>
+        <div class="col-md-2">
+            <a href="/pyqs" class="btn btn-outline-dark w-100 p-3 shadow-sm"><i class="bi bi-file-earmark-text"></i> PYQs</a>
+        </div>
+        <div class="col-md-2">
+            <a href="/reviews" class="btn btn-outline-dark w-100 p-3 shadow-sm"><i class="bi bi-chat-left-text"></i> Reviews & Feedback</a>
+        </div>
+    </div>
+</div>
+
+<!-- Contribute Section -->
+<div id="contribute" class="container mt-5 mb-5">
+    <h3 class="text-center mb-4 fw-bold">Contribute to the Community</h3>
+    <p class="text-center text-muted">Empower your peers by sharing your study materials. Upload PDFs of notes, books, practical files, or previous year questions to help students learn efficiently. Only PDF files are accepted for consistency.</p>
+    <div class="col-md-6 offset-md-3">
+        <form action="/home" method="POST" class="needs-validation shadow p-4 rounded border" novalidate enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="username" class="form-label fw-bold">Your Name</label>
+                <input type="text" name="contributor[username]" id="username" class="form-control" placeholder="Enter your full name" required>
+                <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label fw-bold">Email</label>
+                <input type="text" name="contributor[email]" id="email" class="form-control" placeholder="Enter your email" required>
+                <div class="invalid-feedback">Please provide a email address.</div>
+            </div>
+            <div class="mb-3">
+                <label for="file" class="form-label fw-bold">Upload File (.pdf only)</label>
+                <input type="file" name="file" id="file" class="form-control" accept=".pdf" required>
+                <small class="text-muted">* Only PDF files are accepted.</small>
+            </div>
+            <button type="submit" class="btn btn-dark w-100 shadow-sm" style="color: black;"><i class="bi bi-upload"></i> Upload</button>
+        </form>
+    </div>
+</div>
+
+<!-- About / Footer -->
+<div class="container-fluid bg-light py-5 mb-5 shadow-sm">
+    <div class="text-center">
+        <h5 class="fw-bold mb-3">About the Creator</h5>
+        <p class="text-muted">I’m <strong>Suman</strong>, a senior from CSE batch 2023-2027. StudyAdda was developed to provide structured, reliable, and easily accessible study resources. This platform encourages collaboration among students and ensures that learning is simplified, organized, and efficient.</p>
+        <p class="text-secondary">© 2025 StudyAdda. All rights reserved.</p>
+    </div>
+</div>
+</body>
+<style>
+    .hover-shadow:hover {
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15) !important;
+        transition: all 0.3s ease-in-out;
+    }
+    .container-fluid {
+        margin: 0 !important;
+        height: fit-content !important;
+        padding-bottom: 0 !important;
+    }
+</style>
