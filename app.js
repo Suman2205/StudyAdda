@@ -66,6 +66,7 @@ app.post("/home",upload.single('file'),async(req,res)=>{
         req.flash('error', 'File upload failed!');
     }
     const newContributor=new Contributor(req.body.contributor);
+    console.log(newContributor);
     newContributor.file=req.file.path;
     await newContributor.save();
     res.redirect("/home");
