@@ -1,9 +1,6 @@
-
-if(process.env.NODE_ENV!="production"){
-    require('dotenv').config()
-}
+require('dotenv').config({path:'../.env'});
 const dbUrl=process.env.ATLASDB_URL;
-
+console.log(dbUrl);
 const mongoose=require('mongoose');
 const { env } = require('process');
 const Unit=require('../models/units');
