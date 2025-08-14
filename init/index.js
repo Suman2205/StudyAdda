@@ -1,9 +1,11 @@
+
 if(process.env.NODE_ENV!="production"){
     require('dotenv').config()
 }
 const dbUrl=process.env.ATLASDB_URL;
 
 const mongoose=require('mongoose');
+const { env } = require('process');
 const Unit=require('../models/units');
 const Subject = require('../models/subjects');
 const Note = require('../models/notes');
