@@ -22,45 +22,63 @@
   }
   .container-fluid{
     padding: 0 !important;
+    margin: 0 !important
   }
   .navbar {
-    height: 50px !important;
+    height: 60px !important;
     padding-bottom: 5px !important;
     padding-top: 0 !important;
-    position: relative;
-    z-index: 1050; /* keep it above body */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1050;
+    background-color: rgba(255,255,255,0.95); 
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: top 0.3s;
+  }
+  .navbar-nav{
+    width: 100% !important;
+    margin: 0 !important;
   }
   .navbar-toggler{
     margin-left: 10px;
     margin-right: 10px;
   }
   .navbar-collapse {
-    background-color: white; /* solid background when expanded */
+    background-color: white;
   }
-
-  @media (max-width: 991px) { /* only for mobile view */
+  @media (max-width: 991px) { 
     .navbar-collapse.show {
       position: relative;
     }
   }
+  .ml-10 {
+    margin-left: 10px;
+  }
+  body {
+    padding-top: 60px;
+  }
 </style>
 
-
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+<nav class="navbar navbar-expand-md bg-body-light border-bottom">
   <div class="container-fluid">
-    <!-- <a class="navbar-brand" href="/"><img src="/image/logo.png" style="width: 45px; height: 45px; margin-left: 10px;"></a> -->
+    <a class="navbar-brand" href="/">
+      <img src="/image/title.png" style="height:50px; width: 170px;">
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse ml-10" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link ml-10" href="/home">Home</a>
-        <a class="nav-link" href="/notes">Notes</a>
-        <a class="nav-link" href="/books">Books</a>
-        <a class="nav-link" href="/practicals">Practicals</a>
-        <a class="nav-link" href="/pyqs">PYQs</a>
-        <a class="nav-link" href="/reviews">Reviews & Comments</a>
+            <a class="nav-link ml-10" href="/home">Home</a>
+            <a class="nav-link ml-10" href="/notes">Notes</a>
+            <a class="nav-link ml-10" href="/books">Books</a>
+            <a class="nav-link ml-10" href="/practicals">Practicals</a>
+            <a class="nav-link ml-10" href="/pyqs">PYQs</a>
+            <a class="nav-link ml-10" href="/reviews">Reviews & Comments</a>
       </div>
     </div>
   </div>
 </nav>
+
