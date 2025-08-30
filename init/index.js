@@ -33,6 +33,9 @@ const initUnit=async()=>{
     await Contributor.deleteMany({});
     const existing = await Unit.findOne();   // Check if any unit already exists
     if (!existing) {
+        let mainContributor=new Contributor({username:"Suman",email:"suman1091792@gmail.com"});
+        mainContributor.save();
+        unitData.unitData=unitData.unitData.map((obj)=>({...obj, contributor:mainContributor}));
         await Unit.insertMany(unitData.unitData);  // Only insert if none exist
         console.log("Units seeded successfully");
     } else {
@@ -44,6 +47,7 @@ const initScpSubject=async()=>{
     const SCP=new Subject({
         name:"Semiconductor Physics",
         parent:"SEM1",
+        title:"SCP"
     })
     const units=await Unit.find({parent:"SCP"});
     await Subject.insertOne(SCP);
@@ -55,6 +59,7 @@ const initBeeSubject=async()=>{
     const BEE=new Subject({
         name:"Basic Electrical Engineering",
         parent:"SEM1",
+        title:"BEE",
     })
     const units=await Unit.find({parent:"BEE"});
     await Subject.insertOne(BEE);
@@ -67,6 +72,7 @@ const initUhvSubject=async()=>{
     const UHV=new Subject({
         name:"Universal Human Values and Ethics",
         parent:"SEM1",
+        title:"UHV",
     })
     const units=await Unit.find({parent:"UHV"});
     await Subject.insertOne(UHV);
@@ -81,6 +87,7 @@ const initPpsSubject=async()=>{
     const PPS=new Subject({
         name:"Programming for Problem Solving",
         parent:"SEM2",
+        title:"PPS",
     })
     const units=await Unit.find({parent:"PPS"});
     await Subject.insertOne(PPS);
@@ -93,6 +100,7 @@ const initChemSubject=async()=>{
     const CHEM=new Subject({
         name:"Chemistry",
         parent:"SEM2",
+        title:"CHEM",
     })
     const units=await Unit.find({parent:"CHEM"});
     await Subject.insertOne(CHEM);
@@ -104,6 +112,7 @@ const initBioSubject=async()=>{
     const BIO=new Subject({
         name:"Biology",
         parent:"SEM2",
+        title:"BIO",
     })
     const units=await Unit.find({parent:"BIO"});
     await Subject.insertOne(BIO);
@@ -115,6 +124,7 @@ const initEngSubject=async()=>{
     const ENG=new Subject({
         name:"Technical Writing for English",
         parent:"SEM2",
+        title:"ENG",
     })
     const units=await Unit.find({parent:"ENG"});
     await Subject.insertOne(ENG);
@@ -126,6 +136,7 @@ const initMathSubject=async()=>{
     const MATH=new Subject({
         name:"Mathematics-II",
         parent:"SEM2",
+        title:"Math-II",
     })
     const units=await Unit.find({parent:"MATH"});
     await Subject.insertOne(MATH);
@@ -137,6 +148,7 @@ const initOopsSubject=async()=>{
     const OOPS=new Subject({
         name:"Object Oriented Programming",
         parent:"SEM3",
+        title:"OOP",
     })
     const units=await Unit.find({parent:"OOPS"});
     await Subject.insertOne(OOPS);
@@ -148,6 +160,7 @@ const initDsaSubject=async()=>{
     const DSA=new Subject({
         name:"Data Structures and Algorithms",
         parent:"SEM3",
+        title:"DSA",
     })
     const units=await Unit.find({parent:"DSA"});
     await Subject.insertOne(DSA);
@@ -159,6 +172,7 @@ const initCoaSubject=async()=>{
     const COA=new Subject({
         name:"Computer Organization and Architecture",
         parent:"SEM3",
+        title:"COA",
     })
     const units=await Unit.find({parent:"COA"});
     await Subject.insertOne(COA);
@@ -170,6 +184,7 @@ const initItSubject=async()=>{
     const IT=new Subject({
         name:"IT(Python)",
         parent:"SEM3",
+        title:"IT",
     })
     const units=await Unit.find({parent:"IT"});
     await Subject.insertOne(IT);
@@ -181,6 +196,7 @@ const initPsSubject=async()=>{
     const PS=new Subject({
         name:"Probability and Statistics",
         parent:"SEM3",
+        title:"PS",
     })
     const units=await Unit.find({parent:"PS"});
     await Subject.insertOne(PS);
@@ -192,6 +208,7 @@ const initObSubject=async()=>{
     const OB=new Subject({
         name:"Organizational Behavior",
         parent:"SEM3",
+        title:"OB",
     })
     const units=await Unit.find({parent:"OB"});
     await Subject.insertOne(OB);
@@ -205,6 +222,7 @@ const initDaaSubject=async()=>{
     const DAA=new Subject({
         name:"Design and Analysis of Algorithms",
         parent:"SEM4",
+        title:"DAA",
     })
     const units=await Unit.find({parent:"DAA"});
     await Subject.insertOne(DAA);
@@ -217,6 +235,7 @@ const initApSubject=async()=>{
     const AP=new Subject({
         name:"Advance Programming(Java)",
         parent:"SEM4",
+        title:"AP",
     })
     const units=await Unit.find({parent:"AP"});
     await Subject.insertOne(AP);
@@ -228,6 +247,7 @@ const initDeSubject=async()=>{
     const DE=new Subject({
         name:"Digital Electronics",
         parent:"SEM4",
+        title:"DE",
     })
     const units=await Unit.find({parent:"DE"});
     await Subject.insertOne(DE);
@@ -239,6 +259,7 @@ const initIprSubject=async()=>{
     const IPR=new Subject({
         name:"Intellectual Property Rights & Regulatory",
         parent:"SEM4",
+        title:"IPR",
     })
     const units=await Unit.find({parent:"IPR"});
     await Subject.insertOne(IPR);
@@ -250,6 +271,7 @@ const initPplSubject=async()=>{
     const PPL=new Subject({
         name:"Principle of Programming Languages",
         parent:"SEM4",
+        title:"PPL",
     })
     const units=await Unit.find({parent:"PPL"});
     await Subject.insertOne(PPL);
@@ -261,6 +283,7 @@ const initEvsSubject=async()=>{
     const EVS=new Subject({
         name:"Environmental Studies",
         parent:"SEM4",
+        title:"EVS",
     })
     const units=await Unit.find({parent:"EVS"});
     await Subject.insertOne(EVS);

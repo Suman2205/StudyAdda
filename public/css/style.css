@@ -7,10 +7,10 @@ html, body {
 }
 
 main {
-    flex: 1; /* Pushes footer down */
+    flex: 1; 
 }
 footer {
-    background-color: #222; /* Dark footer */
+    background-color: #222; 
     color: #fff;
     text-align: center;
     padding: 15px 0;
@@ -26,7 +26,7 @@ footer {
 }
 
 .f-info-socials i:hover {
-    color: #0d6efd; /* Bootstrap primary blue on hover */
+    color: #0d6efd;
 }
 .company{
     display: flex;
@@ -61,7 +61,7 @@ footer {
     justify-content: center;
 }
 
-/*Cards*/
+
 .card-container{
     display: flex !important;
     justify-content:center !important;
@@ -91,11 +91,11 @@ footer {
 
 .btn {
     width: 100% !important;
-    padding: 12px 20px;
+    padding: 5px 10px;
     font-size: 16px;
     font-weight: 600;
-    background: linear-gradient(45deg, #87cefa, #00cfff); /* soft sky to cyan */
-    color: black; /* bright cyan to deep turquoise */
+    background: linear-gradient(45deg, #87cefa, #00cfff); 
+    color: black; 
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -106,8 +106,46 @@ footer {
 .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(45deg, #00cfff, #87cefa); /* hover flip */
+    background: linear-gradient(45deg, #00cfff, #87cefa); 
 }
+
+
+.unit-btn {
+  width: 100%;
+  padding: 5px 14px; 
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  text-align: left;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.unit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(135deg, #3a8dff, #00d4ff);
+}
+
+.unit-title {
+  font-size: 0.95rem; 
+  font-weight: 600;
+  margin-bottom: 6px; 
+}
+
+.unit-contributor {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.85); 
+  font-style: italic; 
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 
 
 
@@ -131,7 +169,7 @@ footer {
     border: none !important;
 }
 
-/*Show Page*/
+
 .show-img{
     height: 30vh;
 }
@@ -148,3 +186,79 @@ footer {
 }
 
 
+.notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.semester-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 1.2rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.semester-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+.semester-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.semester-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.subject-count {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.subjects {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.subject-chip {
+  display: flex;
+  flex-direction: column;
+  align-items:self-start;
+  padding: 5px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  background: linear-gradient(135deg, #488ce6, #52bee9);
+/* brighter */
+  color: #fff;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.subject-chip:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #52bee9, #488ce6);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.chip-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.chip-contributor {
+  font-size: 0.6rem;
+  opacity: 0.9;
+  font-style: italic;
+}

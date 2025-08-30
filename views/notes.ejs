@@ -1,5 +1,5 @@
 <% layout("/layouts/boilerplate")-%>
-<body>
+<!-- <body>
     <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 row-cols-1 card-container">
         <% for(let note of notes){%>
                 <div class="card col" style="width: 18rem;">
@@ -8,10 +8,36 @@
                         <hr>
                         <p class="card-text">Subjects:</p>
                         <%for(let subject of note.subjects){%>
-                            <a href="/notes/subjects/<%=subject._id%>" class="btn btn-info btn-md mb-3"><%=subject.name%></a><br>
+                            <a href="/notes/subjects/<%=subject._id%>" class="btn btn-info btn-md mb-3 unit-btn"><%=subject.name%></a><br>
                         <%}%>
                     </div>
                 </div>
         <%}%>
     </div>
+</body> -->
+
+<body>
+  <div class="notes-container">
+    <% for (let note of notes) { %>
+      <div class="semester-card">
+        
+        <!-- Semester Title -->
+        <div class="semester-header" style="justify-content: space-between;">
+          <h3><%= note.semester %></h3>
+          <span class="subject-count"><%= note.subjects.length %> Subjects</span>
+        </div>
+        <hr>
+
+        <!-- Subjects -->
+        <div class="subjects">
+          <% for (let subject of note.subjects) { %>
+            <a href="/notes/subjects/<%=subject._id%>" class="subject-chip">
+              <div class="chip-title"><%= subject.name %></div>
+            </a>
+          <% } %>
+        </div>
+
+      </div>
+    <% } %>
+  </div>
 </body>

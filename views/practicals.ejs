@@ -1,5 +1,5 @@
 <% layout("/layouts/boilerplate")-%>
-<body>
+<!-- <body>
         <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 card-container">
         <% for(let practical of practicals){%>
                 <div class="card col" style="width: 18rem;">
@@ -9,11 +9,46 @@
                         <p class="card-text">Subjects:</p>
                         <%for(let subject of practical.subjects){%>
                             <form action="<%=subject.file%>" target="_blank">
-                                <button class="btn btn-info btn-md mb-3" type="submit"><%=subject.title%></button>
+                                <button class="unit-btn" type="submit">
+                                    <div class="unit-text">
+                                    <div class="unit-title"><%= subject.title %></div>
+                                    <div class="unit-contributor">Contributed by: <span><%= subject.contributor?.username || "Unknown" %></span></div>
+                                    </div>
+                                </button>
                             </form>
                         <%}%>
                     </div>
                 </div>
         <%}%>
         </div>
+</body> -->
+
+
+<body>
+  <div class="notes-container">
+    <% for (let practical of practicals) { %>
+      <div class="semester-card">
+        
+        <!-- Semester Title -->
+        <div class="semester-header" style="justify-content: space-between;">
+          <h3><%= practical.semester %></h3>
+          <span class="subject-count"><%= practical.subjects.length %> Subjects</span>
+        </div>
+        <hr>
+
+        <!-- Subjects -->
+        <div class="subjects">
+          <% for (let subject of practical.subjects) { %>
+            <a href="<%= subject.file %>" target="_blank" class="subject-chip">
+              <div class="chip-title"><%= subject.title %></div>
+              <div class="chip-contributor">
+                contributed by: <%= subject.contributor?.username || "Unknown" %>
+              </div>
+            </a>
+          <% } %>
+        </div>
+
+      </div>
+    <% } %>
+  </div>
 </body>

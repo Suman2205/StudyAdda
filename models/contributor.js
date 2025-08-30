@@ -7,12 +7,21 @@ const contributorSchema=new Schema({
     email:{
         type:String,
     },
-    description:{
+    type:{
+        type:String,
+    },
+    semester:{
+        type:String,
+    },
+    subject:{
+        type:String,
+    },
+    title:{
         type:String,
     },
     file:{
         type:String,
-    }
+    },
 });
-const Contributor=mongoose.model("contributor",contributorSchema);
+const Contributor=mongoose.model("Contributor",contributorSchema);
 module.exports=Contributor;

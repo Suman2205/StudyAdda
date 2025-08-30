@@ -80,9 +80,37 @@
                 <div class="invalid-feedback">Please provide a email address.</div>
             </div>
             <div class="mb-3">
-                <label for="description" class="form-label fw-bold">Notes Description</label>
-                <textarea name="contributor[description]" id="description" class="form-control" placeholder="Enter a brief description of the notes" required></textarea>
-                <div class="invalid-feedback">Please provide a description for the notes.</div>
+                <label for="type" class="form-label fw-bold">Study-Material Type</label>
+                <select id="type" name="contributor[type]" class="form-control" required>
+                    <option value="">--Select your study-material type--</option> <!-- placeholder -->
+                    <option value="Note">Notes</option>
+                    <option value="Book">Books</option>
+                    <option value="Practical">Practicals</option>
+                    <option value="PYQ">PYQs</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="semester" class="form-label fw-bold">Semester</label>
+                <select id="semester" name="contributor[semester]" class="form-control" required>
+                    <option value="">--Select a semester--</option> <!-- placeholder -->
+                    <option value="SEM-1">SEM-1</option>
+                    <option value="SEM-2">SEM-2</option>
+                    <option value="SEM-3">SEM-3</option>
+                    <option value="SEM-4">SEM-4</option>
+                    <option value="SEM-5">SEM-5</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="subject" class="form-label fw-bold">Subject:</label>
+                <select id="subject" name="contributor[subject]" class="form-control" required>
+                    <option value="">--Select a Subject--</option>
+                </select>
+
+            </div>
+            <div class="mb-3">
+                <label for="title" class="form-label fw-bold">Notes Title</label>
+                <input name="contributor[title]" id="title" class="form-control" placeholder="Enter a title which you want to give to your notes" required>
+                <div class="invalid-feedback">Please provide a title for the notes.</div>
             </div>
             <div class="mb-3">
                 <label for="file" class="form-label fw-bold">Upload File (.pdf only)</label>
@@ -114,3 +142,34 @@
         padding-bottom: 0 !important;
     }
 </style>
+
+
+<script>
+  const categorySelect = document.getElementById('semester');
+  const itemSelect = document.getElementById('subject');
+
+  // Define the options for each category
+  const options = {
+    "SEM-1": ['BEE', 'SCP', 'UHV', 'Math-I','EGD'],
+    "SEM-2": ['PPS', 'CHEM', 'BIO', 'ENG','Math-II'],
+    "SEM-3": ['OOP','DSA','COA','IT','OB','PS'],
+    "SEM-4": ['DAA','DE','AP','IPR','PPL','ES'],
+    "SEM-5": ['DBS','WIT','SE','ML','ISE'],
+  };
+
+  categorySelect.addEventListener('change', function() {
+    const selectedCategory = this.value;
+
+    // Clear previous options
+    itemSelect.innerHTML = '<option value="">--Select Item--</option>';
+
+    if (options[selectedCategory]) {
+      options[selectedCategory].forEach(item => {
+        const option = document.createElement('option');
+        option.value = item;
+        option.text = item;
+        itemSelect.appendChild(option);
+      });
+    }
+  });
+</script>

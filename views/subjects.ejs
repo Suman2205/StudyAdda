@@ -1,5 +1,5 @@
 <% layout("/layouts/boilerplate")-%>
-<body>
+<!-- <body>
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3 card-container">
         <div class="card col" style="width: 18rem;">
             <div class="card-body">
@@ -7,11 +7,52 @@
                 <p class="card-text ">Units:</p>
                 <%for(let unit of subject.units){%>
                     <form action="<%=unit.file%>" target="_blank">
-                        <button class="btn btn-info btn-md mb-3" type="submit"><%=unit.title%></button>
+                        
+                        <button class="btn btn-info btn-md mb-3" type="submit">
+                            <%= unit.title %>
+                            <% if (unit.contributor) { %>
+                                <p><%= unit.contributor.username %></p>
+                            <% } else { %>
+                                <p>No contributor</p>
+                            <% } %>
+                        </button>
+
+                        <button class="unit-btn" type="submit">
+    <div class="unit-text">
+      <div class="unit-title"><%= unit.title %></div>
+      <div class="unit-contributor">Contributed by: <span><%= unit.contributor?.username || "Unknown" %></span></div>
+    </div>
+  </button>
                     </form>
                 <%}%>
                         
             </div>
         </div>
     </div>
+</body> -->
+
+
+<body>
+  <div class="notes-container">
+      <div class="semester-card">
+        
+        <!-- Semester Title -->
+        <div class="semester-header" style="text-align: center;">
+          <h3 style="text-align: center;"><%= subject.name %></h3>
+        </div>
+        <hr>
+        <!-- Subjects -->
+        <div class="subjects">
+          <% for (let unit of subject.units) { %>
+            <a href="<%= unit.file %>" target="_blank" class="subject-chip">
+              <div class="chip-title"><%= unit.title %></div>
+              <div class="chip-contributor">
+                contributed by: <%= unit.contributor?.username || "Unknown" %>
+              </div>
+            </a>
+          <% } %>
+        </div>
+
+      </div>
+  </div>
 </body>

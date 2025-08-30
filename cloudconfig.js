@@ -7,11 +7,31 @@ cloudinary.config({
     api_secret:process.env.CLOUD_API_SECRET,
 });
 
+// const storage = new CloudinaryStorage({
+//   cloudinary: cloudinary,
+//   params: {
+//     folder: 'studyadda_DEV',
+//     resource_type: 'raw',
+//     allowedFormats: ['pdf'],
+//   },
+// });
+// module.exports={cloudinary,storage};
+
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
-  params: {
-    folder: 'studyadda_DEV',
-    allowedFormats: ["pdf"]
+  params: (req, file) => {
+    // Clean title to be URL-safe
+    let title = req.body.contributor.title || "file";
+    title = title.replace(/\s+/g, "_").replace(/[^a-zA-Z0-9_-]/g, "");
+
+    return {
+      folder: 'studyadda_DEV',
+      resource_type: 'raw',       // IMPORTANT: for PDFs
+      allowedFormats: ['pdf'],
+      public_id: title,           // filename in URL
+      overwrite: true,            // overwrite if exists
+    };
   },
 });
-module.exports={cloudinary,storage};
+
+module.exports = { cloudinary, storage };

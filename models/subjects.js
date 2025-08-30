@@ -4,6 +4,9 @@ const SubjectSchema=new Schema({
     name:{
         type:String,
     },
+    title:{
+        type:String,
+    },
     parent:{
         type:String
     },

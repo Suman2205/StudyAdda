@@ -1,5 +1,5 @@
 <% layout("/layouts/boilerplate")-%>
-<body>
+<!-- <body>
         <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 card-container">
         <% for(let pyq of pyqs){%>
                 <div class="card col" style="width: 18rem;">
@@ -16,4 +16,32 @@
                 </div>
         <%}%>
         </div>
+</body> -->
+
+<body>
+  <div class="notes-container">
+    <% for (let pyq of pyqs) { %>
+      <div class="semester-card">
+        
+        <!-- Semester Title -->
+        <div class="semester-header" style="text-align: center;">
+          <h3><%= pyq.semester %></h3>
+        </div>
+        <hr>
+
+        <!-- Subjects -->
+        <div class="subjects">
+          <% for (let subject of pyq.subjects) { %>
+            <a href="<%= subject.file %>" target="_blank" class="subject-chip">
+              <div class="chip-title"><%= subject.title %></div>
+              <div class="chip-contributor">
+                contributed by: <%= subject.contributor?.username || "Unknown" %>
+              </div>
+            </a>
+          <% } %>
+        </div>
+
+      </div>
+    <% } %>
+  </div>
 </body>
